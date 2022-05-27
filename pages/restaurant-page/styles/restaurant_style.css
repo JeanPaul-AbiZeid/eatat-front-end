@@ -5,6 +5,17 @@
     box-sizing: border-box;
   }
 
+  .header{
+    background-color: #2ebeff;
+    color: white;
+  }
+
+  .brand{
+    font-family: lobster;
+    width: 100%;
+    font-size: 3.5em;
+  }
+  
   /* Nav bar */
   .top-nav {
     margin-left: 1%;
