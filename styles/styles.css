@@ -4,7 +4,22 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  /* header */
+  .header{
+    background-color: #2ebeff;
+    color: white;
+    height: 80px;
+    padding-left: 1%;
+  }
+
   .brand{
+    font-family: lobster;
+    width: 100%;
+    font-size: 3.5em;
+  }
+  
+  .title{
     font-family: lobster;
     color: #2ebeff;
     font-size: 60px;
@@ -91,6 +106,7 @@
 
   .footer {
     display: flex;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
