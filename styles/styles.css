@@ -48,6 +48,7 @@
     width: 396px;
     padding-bottom: 12px;
     padding-top: 14px;
+    padding-bottom: 5%;
   }
   #form {
     margin-top: 4%;
@@ -85,7 +86,7 @@
   }
 
   #sign-up {
-    color: green;
+    color: #08b1ff;
   }
 
   .footer {
