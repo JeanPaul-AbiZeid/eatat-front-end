@@ -5,7 +5,7 @@
     box-sizing: border-box;
   }
 
-  /* footer */
+  /* header */
   #header {
     display: flex;
     position: fixed;
@@ -15,6 +15,24 @@
     background-color: #2ebeff;
     height: 100px;
     align-items: center;
+  }
+
+  #logo {
+    width: 25%;
+  }
+
+  #logo img {
+    margin-left: 15%;
+    width: 25%;
+  }
+
+  #title {
+    width: 50%;
+    font-family: lobster;
+    font-size: 50px;
+    color: white;
+    align-items: center;
+    text-align: center;
   }
 
   #main {
