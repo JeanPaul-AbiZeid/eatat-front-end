@@ -40,9 +40,26 @@
     margin-right: 15%;
   }
 
+  .pending-review {
+    margin-top: 2%;
+    width: 80%;
+  }
+
+  .confirmed-review {
+    margin-top: 2%;
+    
+    width: 100%;
+  }
+
   .reviews {
+    margin-top: 2%;
     margin-left: 15%;
     margin-right: 15%;
+  }
+
+  .card {
+    border: 1px solid gray;
+    padding-left: 2%;
   }
 
   /* footer */
