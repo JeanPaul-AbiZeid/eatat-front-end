@@ -5,7 +5,6 @@
     box-sizing: border-box;
   }
 
-<<<<<<< HEAD
   .header{
     display: flex;
     justify-content: center;
@@ -15,17 +14,24 @@
   .logo-name{
     display:flex;
     flex-direction: column;
-    text-align: center;
+
+    align-items: center;
     font-family: lobster;
   }
 
   .logo-name img{
     border-radius: 50%;
   }
-  .logo-name h1{
+
+  .brand{
     margin-right: 2%;
     margin-bottom: 3%;
-=======
+    text-align: center;
+    color: white;
+    width: 100%;
+    font-size: 4em;
+  }
+
   .footer {
     display: flex;
     position: fixed;
@@ -89,5 +95,4 @@
   .nav-style {
     display: flex;
     align-items: center;
->>>>>>> 2207dbcf1796966429e9800d6104b141219256d9
   }
