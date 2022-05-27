@@ -4,3 +4,18 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  #log-in {
+    display: flex;
+    align-items: center;
+  }
+
+  #left-login {
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #right-login {
+    width: 50%;
+  }
