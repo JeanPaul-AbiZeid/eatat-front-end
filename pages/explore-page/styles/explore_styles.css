@@ -4,3 +4,24 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  .header{
+    display: flex;
+    justify-content: center;
+    background-color: #2ebeff;
+  }
+
+  .logo-name{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: lobster;
+  }
+
+  .logo-name img{
+    border-radius: 50%;
+  }
+  .logo-name h1{
+    margin-right: 2%;
+    margin-bottom: 3%;
+  }
