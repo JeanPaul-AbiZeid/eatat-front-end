@@ -1,20 +1,25 @@
-/* CSS Reset */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-
+/*Header*/
   .header{
     display: flex;
-    justify-content: center;
     background-color: #2ebeff;
+    justify-content: space-between;
+    width: 100vw;
+  }
+
+ .header:last-child {
+  margin-left: auto;
   }
 
   .logo-name{
+    margin-left: 40%;
     display:flex;
     flex-direction: column;
-
     align-items: center;
     font-family: lobster;
   }
@@ -32,6 +37,14 @@
     font-size: 4em;
   }
 
+  .profile-section{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10vh;
+    gap: 5px;
+  }
+
+/* Footer */
   .footer {
     display: flex;
     position: fixed;
