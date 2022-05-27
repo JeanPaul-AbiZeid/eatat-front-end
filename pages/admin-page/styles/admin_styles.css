@@ -54,8 +54,12 @@
   }
 
   #list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     list-style: none;
     margin-top: 5%;
+    margin-right: 5%;
   }
 
   #list li{
@@ -63,6 +67,17 @@
     font-size: 20px;
   }
 
+  .row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .delete {
+    border-radius: 50%;
+    background-color: red;
+    width: 20px;
+  }
 
   /* footer */
   .footer {
