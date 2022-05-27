@@ -6,23 +6,17 @@
   }
 
   /* header */
-  #header {
-    display: flex;
-    left: 0;
-    top: 0;
-    width: 100%;
+  .header{
     background-color: #2ebeff;
-    height: 100px;
-    align-items: center;
+    color: white;
+    height: 80px;
+    padding-left: 1%;
   }
 
-  #logo {
-    width: 25%;
-  }
-
-  #logo img {
-    margin-left: 15%;
-    width: 25%;
+  .brand{
+    font-family: lobster;
+    width: 100%;
+    font-size: 3.5em;
   }
 
   #title {
