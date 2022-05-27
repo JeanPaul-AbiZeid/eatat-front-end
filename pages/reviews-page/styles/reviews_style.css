@@ -34,6 +34,17 @@
     text-align: center;
   }
 
+  .pending {
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  .reviews {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
   /* footer */
   .footer {
     display: flex;
