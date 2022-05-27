@@ -10,6 +10,16 @@
     margin-right: 10%;
   }
 
+  #review {
+    margin: 2% 0;
+  }
+
+  .review-para {
+    width: 100%;
+    border: 1px solid gray;
+    padding-bottom: 7%;
+  }
+
   .confirm {
     display: flex;
     align-items: center;
