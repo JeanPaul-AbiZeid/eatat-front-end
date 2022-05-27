@@ -5,6 +5,36 @@
     box-sizing: border-box;
   }
 
+  /* Nav bar */
+  .top-nav {
+    margin-left: 1%;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+  }
+  
+  .links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .links img {
+    width: 20%;
+    justify-content: flex-end;
+  }
+
+  .links > li {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .links > li:hover {
+    text-decoration: underline;
+  }
+
   #image-container {
     height: 150px;
     border: 1px solid black;
