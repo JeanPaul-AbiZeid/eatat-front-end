@@ -43,7 +43,41 @@
   }
 
 /*Restaurant*/
+.rest-container{
+  margin-left: 3%;
+  margin-top: 3%;
+  margin-right: 3%;
+  display: flex;
+  width: auto;
+  border: 1px solid #2ebeff;
+  border-radius: 5px;
+  color: #2ebeff;
+}
 
+.rest-container:hover{
+  cursor: pointer;
+  background-color: aliceblue;
+}
+
+.rest-info{
+  margin-left: 1%;
+}
+
+.rest-container h2{
+  font-family: lobster;
+  font-size: 2em;
+}
+
+.rating{
+  display: flex;
+  font-size: 20px;
+  margin-left: 5%;
+}
+
+.rest-container p{
+  font-size: x-large;
+  margin-left: 10%;
+}
 
 /* Footer */
   .footer {
