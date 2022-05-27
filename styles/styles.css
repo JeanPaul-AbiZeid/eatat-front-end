@@ -7,13 +7,16 @@
 
   #log-in {
     display: flex;
-    align-items: center;
+    padding-left: 15%;
+    padding-right: 15%;
   }
 
   #left-login {
     width: 50%;
-    align-items: center;
-    justify-content: center;
+  }
+
+  #left-login img {
+    border-radius: 50%;
   }
 
   #right-login {
