@@ -5,9 +5,24 @@
     box-sizing: border-box;
   }
 
+  #image-container {
+    height: 150px;
+    border: 1px solid black;
+  }
   #resto {
     margin-left: 10%;
     margin-right: 10%;
+  }
+
+  #resto-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #add {
+    background-color: #2ebeff;
+    height: 30px;
+    border-radius: 2px;
   }
 
   #description {
@@ -67,7 +82,6 @@
 
   .footer {
     display: flex;
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
