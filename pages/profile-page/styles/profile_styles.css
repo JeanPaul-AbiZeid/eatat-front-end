@@ -54,10 +54,50 @@
   text-align: center;
   font-size: large;
   color: white;
-  background-color: #2ebeff;
+  background-color: rgb(218, 16, 33);
   border-radius: 5px;
-  border-color: #2ebeff;
+  border-color: rgb(218, 16, 33);
   cursor: pointer;
+}
+
+/*Profile and recent reviews*/
+.blue-border{
+  border: 1px solid #2ebeff;
+  border-radius: 5px;
+  margin:1%;
+}
+
+.lobster{
+  font-family: lobster;
+  font-size: x-large;
+}
+
+.prof-revs{
+  display: flex;
+  gap: 20%;
+}
+
+.recent-reviews{
+  margin: 1%;
+}
+
+.review{
+  margin-right: 5%;
+  margin-bottom: 3%;
+  padding: 1%;
+  width: auto;
+  color: #2ebeff;
+}
+
+.name-rating{
+  display: flex;
+  gap:100px;
+}
+
+.rating{
+  display: flex;
+  font-size: 20px;
+  margin-left: 5%;
 }
 
 /*Footer*/
