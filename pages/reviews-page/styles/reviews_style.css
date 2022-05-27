@@ -42,16 +42,19 @@
 
   .pending-review {
     margin-top: 2%;
-    width: 90%;
+    width: 100%;
   }
 
   .confirm {
     display: flex;
     align-items: center;
+    margin-bottom: 3%;
   }
 
   .yes {
     font-size: 30px;
+    margin-right: 1%;
+    margin-left: 1%;
     cursor: pointer;
   }
   .no {
@@ -107,7 +110,6 @@
   /* footer */
   .footer {
     display: flex;
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
