@@ -5,7 +5,46 @@
     box-sizing: border-box;
   }
 
+/*Header*/
+  .header{
+    background-color: #2ebeff;
+    color: white;
+  }
 
+  .brand{
+    font-family: lobster;
+    width: 100%;
+    font-size: 3.5em;
+  }
+
+  /* Nav bar */
+  .top-nav {
+    margin-left: 1%;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  .links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .links > li {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .links > li:hover {
+    text-decoration: underline;
+  }
+
+
+/*Footer*/
   .footer {
     display: flex;
     left: 0;
