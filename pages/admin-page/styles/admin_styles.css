@@ -4,3 +4,128 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  /* footer */
+  #header {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #2ebeff;
+    height: 100px;
+    align-items: center;
+  }
+
+  #main {
+    display: flex;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 10%;
+  }
+
+  #left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    width: 50%;
+  }
+
+  .button{
+    width: 50%;
+    height: 30px;
+    margin-bottom: 5%;
+    background-color: #2ebeff;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  #right {
+    width: 50%;
+  }
+
+  #users {
+    border: 1px solid black;
+    padding-top: 2%;
+    padding-left: 5%;
+  }
+
+  #list {
+    list-style: none;
+    margin-top: 5%;
+  }
+
+  #list li{
+    margin-bottom: 2%;
+    font-size: 20px;
+  }
+
+
+  /* footer */
+  .footer {
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #2ebeff;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .footer-container-1 {
+    font-size: calc((1.1 - 1) * 1.2vw + 1rem);
+    background-color: #2ebeff;
+    text-align: center;
+  }
+
+  .privacy-button {
+    color: white;
+    cursor: pointer;
+    text-decoration-line: underline;
+    background-color: #2ebeff;
+  }
+
+  .footer-container-2 {
+    color: white;
+    background-color: #2ebeff;
+    font-size: calc((1.3 - 1) * 1.2vw + 1rem);
+  }
+
+  .icons-container {
+    display: flex;
+    background-color: #2ebeff;
+    color: white;
+    height: 20px;
+  }
+
+  .fa {
+    display: flex;
+    padding: 2%;
+    width: 50%;
+    margin-right: 20px;
+  }
+
+  .fa-facebook {
+    background-color: #2ebeff;
+    color: white;
+  }
+
+  .fa-instagram {
+    background-color: #2ebeff;
+    color: white;
+  }
+
+  .fa-twitter {
+    background-color: #2ebeff;
+    color: white;
+  }
+
+  .nav-style {
+    display: flex;
+    align-items: center;
+  }
