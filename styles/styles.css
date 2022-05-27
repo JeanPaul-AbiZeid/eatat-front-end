@@ -9,7 +9,7 @@
     color: #2ebeff;
     font-size: 60px;
   }
-  
+
   #log-in {
     display: flex;
     padding-left: 15%;
@@ -79,6 +79,10 @@
     line-height: 30px;
     font-weight: bold;
     width: 364px;
+}
+
+.btn-blue:hover {
+  background-color: #08b1ff;
 }
 
 #sign-up {
