@@ -141,7 +141,18 @@
     width: 30%;
   }
 
-  /* sing up button */
+  /*Form in Model*/
+  .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form > input{
+    width: auto;
+  }
+
+  /* sign up button */
   #sign-up-button {
     background-color: #2ebeff;
     margin-top: 1%;
