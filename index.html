@@ -23,12 +23,12 @@
             <div id="right-login">
                 <div class="form-container">
                     <h1>Sign In</h1>
-                    <form id="form">
-                        <input type="text" placeholder="Email address"><br/>
-                        <input type="password" placeholder="Password" id="myInput">
+                    <form id="form" action="C:\xampp\htdocs\eatAt-backend\eatat-backend\login.php" method="post">
+                        <input type="text" placeholder="Email address" name="email"><br/>
+                        <input type="password" placeholder="Password" id="myInput" name="password">
                         <div id="pass"><input type="checkbox" id="toggle">Show Password</div>
+                        <input type="submit" class="btn btn-blue" value="Log In">
                     </form>
-                    <button class="btn btn-blue">Log in</button>
                     <h4>New account? <a id="sign-up" href="#">Sign up</a></h4>
                     <!-- The Modal -->
                     <div id="myModal" class="modal">
@@ -36,11 +36,11 @@
                         <!-- Modal content -->
                         <div class="modal-content">
                         <span class="close">&times;</span><br/><br/>
-                        <form action="php-file" class="form">
+                        <form action="phpfile" class="form">
                             <input type="text" placeholder="First name"><br/>
                             <input type="text" placeholder="Last name"><br/>
-                            <input type="text" placeholder="email"><br/>
-                            <input type="text" placeholder="Password"><br/>
+                            <input type="text" placeholder="email" ><br/>
+                            <input type="text" placeholder="Password" ><br/>
                             <button type="submit" id="sign-up-button">sign up</button>
                         </form>
                     </div>
@@ -63,42 +63,6 @@
                 </nav>
             </div>
         </div>
-        <script>
-            var show = document.getElementById("toggle");
-            show.addEventListener("click", reveal);
-            function reveal() {
-              var x = document.getElementById("myInput");
-              if (x.type === "password") {
-                x.type = "text";
-              } else {
-                x.type = "password";
-              }
-            }
-            // Get the modal
-            var modal = document.getElementById("myModal");
-
-            // Get the button that opens the modal
-            var btn = document.getElementById("sign-up");
-
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close");
-
-            // When the user clicks the button, open the modal 
-            btn.addEventListener("click", function(){
-                modal.style.display = "block";})
-
-            // When the user clicks on <span> (x), close the modal
-            span[0].addEventListener("click", function(){
-                modal.style.display = "none";})
-
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-            }
-
-
-            </script>
+        <script src="./scripts/script.js"></script>
     </body>
 </html>
