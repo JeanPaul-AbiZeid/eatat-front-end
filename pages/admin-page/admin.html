@@ -19,7 +19,7 @@
             <div id="buttons-container">
                 <button class="button" id="add-rest">Add Restaurant</button>
                 <button class="button" id="monitor">Monitor Reviews</button>
-                <button class="button">Log Out</button>
+                <button class="button" id="logout">Log Out</button>
             </div>
             <div id="myModal" class="modal">
                 <!-- Modal content -->
@@ -75,6 +75,7 @@
             // Buttons
             var add_rest_btn = document.getElementById("add-rest");
             var monitor_btn = document.getElementById("monitor");
+            var logout_btn = document.getElementById("logout");
 
             // Get the <span> element that closes the modal
             var span = document.getElementsByClassName("close");
@@ -96,7 +97,12 @@
 
             //when the user clicks on monitor reviews
             monitor_btn.addEventListener("click",function(){
-                window.location.href = "../reviews-page/reviews.html"
+                window.location.href = "../reviews-page/reviews.html";
+            })
+
+            //when the user clicks on logout
+            logout_btn.addEventListener("click",function(){
+                window.location.href = "../../index.html";
             })
             </script>
     </body>
