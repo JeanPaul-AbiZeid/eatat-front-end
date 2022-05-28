@@ -134,10 +134,26 @@
   /* Modal Content */
   .modal-content {
     background-color: #fefefe;
+    border-radius: 5px;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 30%;
+  }
+
+  /* sing up button */
+  #sign-up-button {
+    background-color: #2ebeff;
+    margin-top: 1%;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 100px;
+    height: 25px;
+    border: gray;
+  }
+
+  #sign-up-button:hover {
+    background-color: #08b1ff;
   }
 
   /* The Close Button */
