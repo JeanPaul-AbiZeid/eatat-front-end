@@ -18,7 +18,7 @@
             <h1 id="title">Admin's Page</h1>
             <div id="buttons-container">
                 <button class="button" id="add-rest">Add Restaurant</button>
-                <button class="button">Monitor Reviews</button>
+                <button class="button" id="monitor">Monitor Reviews</button>
                 <button class="button">Log Out</button>
             </div>
             <div id="myModal" class="modal">
@@ -38,6 +38,7 @@
                 </div>
             </div>
 
+            <!--User List-->
             <div id="users">
                 <h1>List of Users</h1>
                 <ul id="list">
@@ -71,14 +72,15 @@
             // Get the modal
             var modal = document.getElementById("myModal");
 
-            // Get the button that opens the modal
-            var btn = document.getElementById("add-rest");
+            // Buttons
+            var add_rest_btn = document.getElementById("add-rest");
+            var monitor_btn = document.getElementById("monitor");
 
             // Get the <span> element that closes the modal
             var span = document.getElementsByClassName("close");
 
-            // When the user clicks the button, open the modal 
-            btn.addEventListener("click", function(){
+            // When the user clicks the add restaurant button, open the modal 
+            add_rest_btn.addEventListener("click", function(){
                 modal.style.display = "block";})
 
             // When the user clicks on <span> (x), close the modal
@@ -91,6 +93,11 @@
                 modal.style.display = "none";
             }
             }
+
+            //when the user clicks on monitor reviews
+            monitor_btn.addEventListener("click",function(){
+                window.location.href = "../reviews-page/reviews.html"
+            })
             </script>
     </body>
 </html>
