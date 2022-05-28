@@ -25,7 +25,8 @@
                     <h1>Sign In</h1>
                     <form id="form">
                         <input type="text" placeholder="Email address"><br/>
-                        <input type="text" placeholder="Password">
+                        <input type="password" placeholder="Password" id="myInput">
+                        <div id="pass"><input type="checkbox" id="toggle">Show Password</div>
                     </form>
                     <button class="btn btn-blue">Log in</button>
                     <h4>New account? <a id="sign-up" href="#">Sign up</a></h4>
@@ -46,5 +47,17 @@
                 </nav>
             </div>
         </div>
+        <script>
+            var show = document.getElementById("toggle");
+            show.addEventListener("click", reveal);
+            function reveal() {
+              var x = document.getElementById("myInput");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }
+            </script>
     </body>
 </html>
