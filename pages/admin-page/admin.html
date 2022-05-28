@@ -17,7 +17,7 @@
         <div id="main">
             <h1 id="title">Admin's Page</h1>
             <div id="buttons-container">
-                <button class="button">Add Restaurant</button>
+                <button class="button" id="add-rest">Add Restaurant</button>
                 <button class="button">Monitor Reviews</button>
                 <button class="button">Log Out</button>
             </div>
@@ -53,22 +53,6 @@
                 </ul>
             </div>
         </div>
-
-        <form class="above-description" action="a-php-file">
-            
-            <input type="text" class="input" id="name" placeholder="Restaurant Name"> <br>
-            <input type="text" class="input" id="location" placeholder="Add Location"> <br>
-            <input type="text" class="input" id="avg-cost" placeholder="Average Cost"> <br>
-            <input type="text" class="input" id="category" placeholder="Category"> <br>
-
-            <label for="rest-image">Upload image:</label>
-            <input type="file" id="rest-image" name="rest-image"> <br>
-
-            <label for="Description">Description:</label>
-            <textarea id="Description" placeholder="Add Description"></textarea>
-
-        </form> 
-
         <!-- footer -->
         <div class="footer">
             <div class="footer-container-1"><a href="#"><p class="privacy-button">Privacy Policy</p></a></div>
@@ -83,5 +67,30 @@
                 </nav>
             </div>
         </div>
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("add-rest");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close");
+
+            // When the user clicks the button, open the modal 
+            btn.addEventListener("click", function(){
+                modal.style.display = "block";})
+
+            // When the user clicks on <span> (x), close the modal
+            span[0].addEventListener("click", function(){
+                modal.style.display = "none";})
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+            }
+            </script>
     </body>
 </html>
