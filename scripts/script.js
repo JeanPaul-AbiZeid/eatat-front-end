@@ -21,6 +21,7 @@ let signUpSubmit= (e) =>{
     //check if the email exists
     if(response.data["success"]){
       window.location.href = "./pages/explore-page/explore.html";
+      localStorage.setItem("id", response.data["id"]);
       //id = response.data["id"];
     }else{
       alert(response.data["response"]); //email already exists
@@ -49,6 +50,8 @@ let logIn = (e)=>{
     //check if log in was succesfull
     if(response.data["success"]){
       window.location.href = "./pages/explore-page/explore.html";
+      //saving logged in user id in local storage
+      localStorage.setItem("id", response.data["user_id"]);
     }else{
       alert(response.data["response"]); //incorrect email and/or password
     }
