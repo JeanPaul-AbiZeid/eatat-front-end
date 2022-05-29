@@ -1,6 +1,7 @@
-sign_up_btn = document.getElementById("sign-up-button");
+const sign_up_btn = document.getElementById("sign-up-button");
+const log_in_btn = document.getElementById("login");
 
-//submit button functionality
+//function for sign up button on click
 let signUpSubmit= (e) =>{
   e.preventDefault();
   let data = new FormData();
@@ -8,25 +9,58 @@ let signUpSubmit= (e) =>{
   data.append('first-name', document.getElementById("first-name").value);
   data.append('last-name', document.getElementById("last-name").value);
   data.append('email', document.getElementById("email").value);
-  data.append('pass', document.getElementById("pass").value);
+  data.append('password', document.getElementById("password").value);
 
-  //using axios with post method
+  //linking with sign up api
   axios({
     method: 'post',
     url: 'http://localhost:8080/eatAt-backend/eatat-backend/sign-up.php',
     data: data,
   })
   .then(function (response) {
-    console.log(response);
-    
-  }).catch(function (error){
+    //check if the email exists
+    if(response.data["success"]){
+      window.location.href = "./pages/explore-page/explore.html";
+      //id = response.data["id"];
+    }else{
+      alert(response.data["response"]); //email already exists
+    }
+  })
+  .catch(function (error){
     console.log(error);
   })
-
 }
 
-sign_up_btn.addEventListener('click',signUpSubmit);
+//function for log in button on click
+let logIn = (e)=>{
+  e.preventDefault();
+  let data = new FormData();
 
+  data.append('email', document.getElementById("email").value);
+  data.append('password', document.getElementById("password").value);
+
+  //linking with login api
+  axios({
+    method: 'post',
+    url: 'http://localhost:8080/eatAt-backend/eatat-backend/login.php',
+    data: data,
+  })
+  .then(function (response) {
+    //check if log in was succesfull
+    if(response.data["success"]){
+      window.location.href = "./pages/explore-page/explore.html";
+    }else{
+      alert(response.data["response"]); //incorrect email and/or password
+    }
+  })
+  .catch(function (error){
+    console.log(error);
+  })
+}
+
+//Event listeners for signup and login
+sign_up_btn.addEventListener('click',signUpSubmit);
+log_in_btn.addEventListener('click', logIn);
 
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -43,7 +77,7 @@ var show = document.getElementById("toggle");
 //function that shows password with checkbox
 show.addEventListener("click", reveal);
 function reveal() {
-  var x = document.getElementById("myInput");
+  var x = document.getElementById("password");
   if (x.type === "password") {
     x.type = "text";
   } else {
