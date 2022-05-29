@@ -36,11 +36,11 @@
                         <!-- Modal content -->
                         <div class="modal-content">
                         <span class="close">&times;</span><br/><br/>
-                        <form action="http://localhost:8080/eatAt-backend/eatat-backend/sign-up.php" method="post" class="form">
-                            <input type="text" placeholder="First name" name="first-name"><br/>
-                            <input type="text" placeholder="Last name" name="last-name"><br/>
-                            <input type="text" placeholder="email" name="email"><br/>
-                            <input type="text" placeholder="Password" name="pass"><br/>
+                        <form class="form">
+                            <input type="text" placeholder="First name" id="first-name"><br/>
+                            <input type="text" placeholder="Last name" id="last-name"><br/>
+                            <input type="text" placeholder="email" id="email"><br/>
+                            <input type="text" placeholder="Password" id="pass"><br/>
                             <button type="submit" id="sign-up-button">sign up</button>
                         </form>
                     </div>
@@ -63,6 +63,7 @@
                 </nav>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="./scripts/script.js"></script>
     </body>
 </html>

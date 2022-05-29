@@ -1,3 +1,32 @@
+sign_up_btn = document.getElementById("sign-up-button");
+
+//submit button functionality
+let signUpSubmit= (e) =>{
+  e.preventDefault();
+  let data = new FormData();
+
+  data.append('first-name', document.getElementById("first-name").value);
+  data.append('last-name', document.getElementById("last-name").value);
+  data.append('email', document.getElementById("email").value);
+  data.append('pass', document.getElementById("pass").value);
+  axios({
+    method: 'post',
+    url: 'http://localhost:8080/eatAt-backend/eatat-backend/sign-up.php',
+    data: data,
+  })
+  .then(function (response) {
+    console.log(response);
+
+  }).catch(function (error){
+    console.log(error);
+  })
+
+}
+
+sign_up_btn.addEventListener('click',signUpSubmit);
+
+
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
