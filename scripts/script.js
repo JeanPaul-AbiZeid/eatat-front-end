@@ -9,6 +9,8 @@ let signUpSubmit= (e) =>{
   data.append('last-name', document.getElementById("last-name").value);
   data.append('email', document.getElementById("email").value);
   data.append('pass', document.getElementById("pass").value);
+
+  //using axios with post method
   axios({
     method: 'post',
     url: 'http://localhost:8080/eatAt-backend/eatat-backend/sign-up.php',
@@ -16,7 +18,7 @@ let signUpSubmit= (e) =>{
   })
   .then(function (response) {
     console.log(response);
-
+    
   }).catch(function (error){
     console.log(error);
   })
@@ -24,7 +26,6 @@ let signUpSubmit= (e) =>{
 }
 
 sign_up_btn.addEventListener('click',signUpSubmit);
-
 
 
 // Get the modal
