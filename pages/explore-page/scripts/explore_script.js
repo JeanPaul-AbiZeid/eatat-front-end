@@ -8,12 +8,13 @@ axios({
     console.log(response.data); 
     //looping over the array to get restaurant data
     for(let i=0; i<response.data.length; i++){
+        let id = response.data[i]["id"];
         let name = response.data[i]["name"];
         let location = response.data[i]["name"];
         let avg_cost = response.data[i]["avg_cost"];
         let category = response.data[i]["category"];
         let description = response.data[i]["description"];
-        createResto(name,location,avg_cost,category,description);
+        createResto(id,name,location,avg_cost,category,description);
     }
 })
 
@@ -28,11 +29,11 @@ rest_container.addEventListener("click",function(){
 })
 
 //creating restaurant card function
-function createResto(name,loc,cost,category,description,image){
+function createResto(id,name,loc,cost,category,description,image){
     //creating main div tag
     const card_div = document.createElement("div");
     document.body.appendChild(card_div);
-    card_div.id = name; //each card has its name as id
+    card_div.id = id; //each card has its database id as html id
     card_div.className = "rest-container";
 
     //creating resto image and its div
