@@ -38,15 +38,32 @@ window.location.href = "../../index.html";
 axios({
     url: 'http://localhost/eatAt-backend/eatat-backend/users_list.php',
 }).then(function(response){
-    // console.log(response.data); 
+    console.log(response.data);
     //looping over the array to get user data
     for(let i = 0; i < response.data.length; i++){
         let id = response.data[i]["id"];
-        let first_name = response.data[i]["first_namename"];
+        let first_name = response.data[i]["first_name"];
+        let last_name = response.data[i]["last_name"];
         let email = response.data[i]["email"];
-        
+        createRow(id, first_name, last_name, email);
     }
-    
-    
+})
+
+function createRow(id, first_name, last_name, email){
+    //creating div tag and inserting in ul
+    const ul_div = document.createElement("div");
+    const ul = document.getElementById("list");
+    ul_div.id = id;
+    ul_div.className = "row";
+    ul.appendChild(ul_div);
+
+    //creating li in the div
+    var li = document.createElement("li");
+    ul_div.appendChild(li);
+    li.innerHTML = "id:" + id + "\tfull name:" + first_name + ' ' + last_name + "\temail:" + email;
+
+    var div_child = document.createElement("div");
+    div_child.className = "delete";
+    ul_div.appendChild(div_child);
+    div_child.innerHTML = "&#10060";
 }
-)

@@ -147,6 +147,7 @@
 
   #list li{
     font-size: 20px;
+    width: 100%;
   }
 
   .row {
@@ -154,7 +155,6 @@
     width: 100%;
     margin: 1%;
     border: 1px solid black;
-    justify-content: space-between;
     padding: 0 5%;
     align-items: center;
     height: 35px;
