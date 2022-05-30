@@ -8,8 +8,12 @@ axios({
     console.log(response.data); 
     //looping over the array to get restaurant data
     for(let i=0; i<response.data.length; i++){
-        createResto(response.data[i]["name"],response.data[i]["location"],response.data[i]["avg_cost"],response.data[i]["category"],response.data[i]["description"]);
-        console.log("works");
+        let name = response.data[i]["name"];
+        let location = response.data[i]["name"];
+        let avg_cost = response.data[i]["avg_cost"];
+        let category = response.data[i]["category"];
+        let description = response.data[i]["description"];
+        createResto(name,location,avg_cost,category,description);
     }
 })
 
