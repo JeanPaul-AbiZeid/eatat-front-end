@@ -1,7 +1,7 @@
 const sign_up_btn = document.getElementById("sign-up-button");
 const log_in_btn = document.getElementById("login");
 
-//function for sign up button on click
+//function when clicking sign up button 
 let signUpSubmit= (e) =>{
   e.preventDefault();
   let data = new FormData();
