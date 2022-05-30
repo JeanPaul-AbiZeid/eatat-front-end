@@ -30,7 +30,8 @@ let addReview = (e)=>{
   
     data.append('user_id', localStorage.getItem("id"));
     data.append('restaurant_id', localStorage.getItem("clicked_resto_id"));
-    data.append('review', document.getElementById("review"));
+    data.append('review', document.getElementById("review").value);
+    data.append('rating', checkedRating());
 
     //linking with add-review api
     axios({
@@ -41,16 +42,15 @@ let addReview = (e)=>{
     .then(function (response) {
       //check if log in was succesfull
       if(response.data["success"]){
-        
-  
-      }else{
-        alert(response.data["response"]); //incorrect email and/or password
+        alert('Review added succesfully!');
       }
     })
     .catch(function (error){
       console.log(error);
     })
   }
+
+//when user clicks on submit review
 
 
 //when user clicks the home in header
@@ -82,10 +82,5 @@ function checkedRating(){
         }
     }
 }
-
-document.addEventListener("click",function(){
-    var x = checkedRating();
-    console.log(x);
-})
 
 
