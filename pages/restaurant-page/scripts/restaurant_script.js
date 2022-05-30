@@ -31,16 +31,16 @@ let addReview = (e)=>{
     data.append('user_id', localStorage.getItem("id"));
     data.append('restaurant_id', localStorage.getItem("clicked_resto_id"));
     data.append('review', document.getElementById("review").value);
-    data.append('rating', checkedRating());
+    data.append('ratings', checkedRating());
 
     //linking with add-review api
     axios({
       method: 'post',
-      url: 'http://localhost:8080/eatAt-backend/eatat-backend/login.php',
+      url: 'http://localhost:8080/eatAt-backend/eatat-backend/add-review.php',
       data: data,
     })
     .then(function (response) {
-      //check if log in was succesfull
+      console.log(response.data);
       if(response.data["success"]){
         alert('Review added succesfully!');
       }
@@ -50,8 +50,12 @@ let addReview = (e)=>{
     })
   }
 
-//when user clicks on submit review
+console.log(localStorage.getItem("id"));
 
+//when user clicks on submit review
+add_review_btn = document.getElementById("add-review-button");
+
+add_review_btn.addEventListener('click',addReview);
 
 //when user clicks the home in header
 nav_home.addEventListener("click", function(){
@@ -75,7 +79,6 @@ function fillPage(name,loc,cost,category,description,image){
 //function that returns the value of the selected radio button rating
 function checkedRating(){
     const rating_radio = document.getElementsByName("rating-number");
-    console.log(rating_radio);
     for(let i =0; i<rating_radio.length; i++){
         if(rating_radio[i].checked){
             return rating_radio[i].value;
