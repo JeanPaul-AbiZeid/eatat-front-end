@@ -3,13 +3,12 @@ const nav_home = document.getElementById("home");
 
 
 axios({
-    method: 'get',
     url: 'http://localhost:8080/eatAt-backend/eatat-backend/explore.php',
-    responseType: 'application/json',
 }).then(function(response){
-    console.log(response.data); //looping over the array to get the data
+    console.log(response.data); 
+    //looping over the array to get restaurant data
     for(let i=0; i<response.data.length; i++){
-        createResto();
+        createResto(response.data[i]["name"],response.data[i]["location"],response.data[i]["avg_cost"],response.data[i]["category"],response.data[i]["description"]);
         console.log("works");
     }
 })
@@ -25,12 +24,11 @@ rest_container.addEventListener("click",function(){
 })
 
 //creating restaurant card function
-function createResto(name,loc,cost,category,image,description){
-    console.log("worksss");
+function createResto(name,loc,cost,category,description,image){
     //creating main div tag
     const card_div = document.createElement("div");
     document.body.appendChild(card_div);
-    card_div.id = "roadster"; //TO be changed to name
+    card_div.id = name; //each card has its name as id
     card_div.className = "rest-container";
 
     //creating resto image and its div
@@ -49,7 +47,7 @@ function createResto(name,loc,cost,category,image,description){
     //creating resto name h3
     const resto_name = document.createElement("h2");
     info_div.appendChild(resto_name);
-    resto_name.innerText = "Roadster"; //TO be changed to name
+    resto_name.innerText = name;
 
     //creating div for location and loc icon
     const loc_div = document.createElement("div");
@@ -61,17 +59,17 @@ function createResto(name,loc,cost,category,image,description){
 
     const loc_name = document.createElement("h3");
     loc_div.appendChild(loc_name);
-    loc_name.innerText = "beirut"; //to be changed to location
+    loc_name.innerText = loc; //to be changed to location
 
     //creating category h3
     const categ = document.createElement("h3");
     info_div.appendChild(categ);
-    categ.innerText = "chinese"; //to be changed to category
+    categ.innerText = category; 
 
     //creating avg price h3
     const avg_price = document.createElement("h3");
     info_div.appendChild(avg_price);
-    avg_price.innerText = "50$ for 2"; //to be changed
+    avg_price.innerText = cost; 
 
     //creating rating div
     const rating_div = document.createElement("div");
@@ -85,7 +83,7 @@ function createResto(name,loc,cost,category,image,description){
     //creating description p
     const desc_p = document.createElement("p");
     card_div.appendChild(desc_p);
-    desc_p.innerText = "ipsum lorem"; //to be changed to description
+    desc_p.innerText = description; 
 
 }
 
