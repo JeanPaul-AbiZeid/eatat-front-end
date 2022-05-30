@@ -33,3 +33,20 @@ window.location.href = "../reviews-page/reviews.html";
 logout_btn.addEventListener("click",function(){
 window.location.href = "../../index.html";
 })
+
+//linking restaurants data and creating resto cards accordingly
+axios({
+    url: 'http://localhost/eatAt-backend/eatat-backend/users_list.php',
+}).then(function(response){
+    // console.log(response.data); 
+    //looping over the array to get user data
+    for(let i = 0; i < response.data.length; i++){
+        let id = response.data[i]["id"];
+        let first_name = response.data[i]["first_namename"];
+        let email = response.data[i]["email"];
+        
+    }
+    
+    
+}
+)
