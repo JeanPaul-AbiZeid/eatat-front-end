@@ -75,13 +75,17 @@ function fillPage(name,loc,cost,category,description,image){
 //function that returns the value of the selected radio button rating
 function checkedRating(){
     const rating_radio = document.getElementsByName("rating-number");
-
-    rating_radio.forEach(function(item){
-        if(item.checked){
-            return item.ariaValueMax;
+    console.log(rating_radio);
+    for(let i =0; i<rating_radio.length; i++){
+        if(rating_radio[i].checked){
+            return rating_radio[i].value;
         }
-    })
+    }
 }
 
-console.log(checkedRating());
+document.addEventListener("click",function(){
+    var x = checkedRating();
+    console.log(x);
+})
+
 
