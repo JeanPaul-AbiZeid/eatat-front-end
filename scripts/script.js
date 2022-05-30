@@ -50,9 +50,15 @@ let logIn = (e)=>{
   .then(function (response) {
     //check if log in was succesfull
     if(response.data["success"]){
-      window.location.href = "./pages/explore-page/explore.html";
       //saving logged in user id in local storage
       localStorage.setItem("id", response.data["user_id"]);
+      //
+      if(response.data["type"]=== 1){
+        window.location.href = "./pages/explore-page/explore.html";
+      }else{
+        window.location.href = "./pages/admin-page/admin.html";
+      }
+
     }else{
       alert(response.data["response"]); //incorrect email and/or password
     }
