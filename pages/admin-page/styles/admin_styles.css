@@ -146,22 +146,24 @@
   }
 
   #list li{
-    margin-bottom: 2%;
     font-size: 20px;
   }
 
   .row {
     display: flex;
     width: 100%;
+    margin: 1%;
+    border: 1px solid black;
     justify-content: space-between;
+    padding: 0 5%;
+    align-items: center;
+    height: 35px;
   }
 
   .delete {
-    border-radius: 50%;
-    background-color: red;
     width: 20px;
     cursor: pointer;
-  }
+  } 
 
   /* footer */
   .footer {
