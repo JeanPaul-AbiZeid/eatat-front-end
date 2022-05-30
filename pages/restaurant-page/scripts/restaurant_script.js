@@ -72,5 +72,16 @@ function fillPage(name,loc,cost,category,description,image){
 
 }
 
+//function that returns the value of the selected radio button rating
+function checkedRating(){
+    const rating_radio = document.getElementsByName("rating-number");
 
+    rating_radio.forEach(function(item){
+        if(item.checked){
+            return item.ariaValueMax;
+        }
+    })
+}
+
+console.log(checkedRating());
 
