@@ -1,32 +1,44 @@
-const rest_container = document.getElementById("generic");
+
+
+
+    axios({
+        url: 'http://localhost:8080/eatAt-backend/eatat-backend/explore.php',
+    }).then(function(response){
+        console.log(response.data); 
+        //looping over the array to get restaurant data
+        for(let i=0; i<response.data.length; i++){
+            let id = response.data[i]["id"];
+            let name = response.data[i]["name"];
+            let location = response.data[i]["name"];
+            let avg_cost = response.data[i]["avg_cost"];
+            let category = response.data[i]["category"];
+            let description = response.data[i]["description"];
+            createResto(id,name,location,avg_cost,category,description);
+
+        }
+        
+        //when user clicks the restaurant card
+        //declared inside the axios because its only worked here
+        const rest_container = document.querySelectorAll(".rest-container");
+
+        rest_container.forEach(function(item){
+            console.log("working");
+            item.addEventListener("click",function(){
+                //saved the clicked resto card id to local storage
+                localStorage.setItem("clicked_resto_id", item.id);
+                window.location.href = "../restaurant-page/restaurant.html";
+            })
+        })
+    })
+
+
 const nav_home = document.getElementById("home");
-
-
-axios({
-    url: 'http://localhost:8080/eatAt-backend/eatat-backend/explore.php',
-}).then(function(response){
-    console.log(response.data); 
-    //looping over the array to get restaurant data
-    for(let i=0; i<response.data.length; i++){
-        let id = response.data[i]["id"];
-        let name = response.data[i]["name"];
-        let location = response.data[i]["name"];
-        let avg_cost = response.data[i]["avg_cost"];
-        let category = response.data[i]["category"];
-        let description = response.data[i]["description"];
-        createResto(id,name,location,avg_cost,category,description);
-    }
-})
 
 //when user clicks the home in header
 nav_home.addEventListener("click", function(){
-    window.location.href = "./explore.html"
+    window.location.href = "./explore.html";
 })
 
-//when user clicks the restaurant card
-rest_container.addEventListener("click",function(){
-    window.location.href = "../restaurant-page/restaurant.html";
-})
 
 //creating restaurant card function
 function createResto(id,name,loc,cost,category,description,image){
