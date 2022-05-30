@@ -1,6 +1,19 @@
 const rest_container = document.getElementById("generic");
 const nav_home = document.getElementById("home");
 
+
+axios({
+    method: 'get',
+    url: 'http://localhost:8080/eatAt-backend/eatat-backend/explore.php',
+    responseType: 'application/json',
+}).then(function(response){
+    console.log(response.data); //looping over the array to get the data
+    for(let i=0; i<response.data.length; i++){
+        createResto();
+        console.log("works");
+    }
+})
+
 //when user clicks the home in header
 nav_home.addEventListener("click", function(){
     window.location.href = "./explore.html"
@@ -58,7 +71,7 @@ function createResto(name,loc,cost,category,image,description){
     //creating avg price h3
     const avg_price = document.createElement("h3");
     info_div.appendChild(avg_price);
-    avg_price.innerText = "50$"; //to be changed
+    avg_price.innerText = "50$ for 2"; //to be changed
 
     //creating rating div
     const rating_div = document.createElement("div");
@@ -67,7 +80,7 @@ function createResto(name,loc,cost,category,image,description){
 
     const rating_h3 = document.createElement("h3");
     rating_div.appendChild(rating_h3);
-    rating_h3.innerText = "3 &#11088"; //to be changed to rating??
+    rating_h3.innerHTML = "3 &#11088"; //to be changed to rating??
 
     //creating description p
     const desc_p = document.createElement("p");
