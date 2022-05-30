@@ -32,6 +32,8 @@ let signUpSubmit= (e) =>{
   })
 }
 
+
+
 //function for log in button on click
 let logIn = (e)=>{
   e.preventDefault();
