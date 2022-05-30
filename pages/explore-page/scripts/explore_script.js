@@ -15,8 +15,7 @@ axios({
 
     }
     
-    //when user clicks the restaurant card
-    //declared inside the axios because it only worked here
+    //when user clicks the restaurant card (declared inside the axios because it only worked here)
     const rest_container = document.querySelectorAll(".rest-container");
 
     rest_container.forEach(function(item){
