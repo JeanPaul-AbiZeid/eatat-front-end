@@ -21,6 +21,42 @@ axios({
 })
 
 
+//linking add review php when user submits a review
+let addReview = (e)=>{
+    e.preventDefault();
+    let data = new FormData();
+  
+    data.append('', document.getElementById("email").value);
+    data.append('password', document.getElementById("password").value);
+  
+    //linking with login api
+    axios({
+      method: 'post',
+      url: 'http://localhost:8080/eatAt-backend/eatat-backend/login.php',
+      data: data,
+    })
+    .then(function (response) {
+      //check if log in was succesfull
+      if(response.data["success"]){
+        //saving logged in user id in local storage
+        localStorage.setItem("id", response.data["user_id"]);
+        //
+        if(response.data["type"]=== 1){
+          window.location.href = "./pages/explore-page/explore.html";
+        }else{
+          window.location.href = "./pages/admin-page/admin.html";
+        }
+  
+      }else{
+        alert(response.data["response"]); //incorrect email and/or password
+      }
+    })
+    .catch(function (error){
+      console.log(error);
+    })
+  }
+
+
 //when user clicks the home in header
 nav_home.addEventListener("click", function(){
     window.location.href = "../../pages/explore-page/explore.html"
