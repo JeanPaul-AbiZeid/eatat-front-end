@@ -9,13 +9,17 @@ url += "?id=" + resto_id;
 let review_url = "http://localhost:8080/eatAt-backend/eatat-backend/restaurant-review.php";
 review_url += "?restaurant_id=" + resto_id;
 
+//creating url with resto id to send to restaurant-review api
+let avg_rating_url = "http://localhost:8080/eatAt-backend/eatat-backend/avg-ratings.php";
+avg_rating_url += "?restaurant_id=" + resto_id;
+
 //linking resto page to restaurant api
 axios({
     url: url,
 }).then(function(response){
     result = response.data;
     //console.log(response.data); 
-    //use resto data to fill up page
+    //use resto data from db to fill up page
     let name = result.name;
     let location = result.location;
     let avg_cost = result.avg_cost;
@@ -26,7 +30,7 @@ axios({
     console.log(error);
 })
 
-//linking resto page to restaurant-review
+//linking resto page to restaurant-review php to display the proper restaurant
 axios({
     url: review_url,
 }).then(function(response){
@@ -62,7 +66,7 @@ let addReview = (e)=>{
       data: data,
     })
     .then(function (response) {
-      console.log(response.data);
+      //console.log(response.data);
       if(response.data["success"]){
         alert('Review added succesfully!');
       }
@@ -70,9 +74,25 @@ let addReview = (e)=>{
     .catch(function (error){
       console.log(error);
     })
-  }
+}
 
-//linking add favorites php when user clicks on add to favorites
+//linking to avg-ratings php to display avg rating and total ratings of restaurant
+axios({
+    url: avg_rating_url,
+}).then(function(response){
+    result = response.data;
+    console.log(response.data); 
+    //getting avg and total ratings of resto from db
+    let avg = result["avg(ratings)"];
+    let total = result["count(ratings)"];
+
+    document.getElementById("avg-total").innerHTML = avg + " &#11088<br/>" + total + " ratings";
+}).catch(function (error){
+    console.log(error);
+})
+
+
+//linking to add favorites php when user clicks on add to favorites
 let addFavorites = (e)=>{
     e.preventDefault();
     let data = new FormData();
