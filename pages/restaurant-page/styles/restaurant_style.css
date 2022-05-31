@@ -51,6 +51,7 @@
     border: 1px solid black;
   }
   #resto {
+    margin-top: 5%;
     margin-left: 10%;
     margin-right: 10%;
   }
@@ -63,6 +64,9 @@
   #add {
     background-color: #2ebeff;
     height: 30px;
+    font-size: 20px;
+    color: white;
+    border-color: #2ebeff;
     border-radius: 2px;
   }
 
@@ -71,7 +75,6 @@
     border: 1px solid gray;
   }
  
-
   .review-para {
     width: 100%;
     border: 1px solid gray;
@@ -79,9 +82,23 @@
   }
 
   .confirm {
-    display: flex;
     align-items: center;
     margin-bottom: 3%;
+  }
+
+  .submit_button {
+    background-color: #2ebeff;
+    color: white;
+    margin: 1% 0;
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    border-color: #2ebeff;
+    cursor: pointer;
+  }
+
+  .submit_button:hover {
+    background-color: #0081bd;
   }
 
   .card {

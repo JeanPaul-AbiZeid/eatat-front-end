@@ -133,9 +133,7 @@ function fillPage(name,loc,cost,category,description,image){
     const info_div = document.getElementById("info");
     info_div.children[0].innerHTML = name;
     info_div.children[1].innerHTML = loc;
-    info_div.children[2].innerHTML = cost;
-
-    //TODO add avg ratings andtotal ratings
+    info_div.children[2].innerHTML = cost + "$ for 2 people";
 
     //add desciption
     document.getElementById("description").innerHTML = description;
@@ -200,6 +198,3 @@ function createReview(first_name,last_name,rating,review,image){
     review_div.appendChild(review_paragraph);
     review_paragraph.innerHTML = review;
 }
-
-//testing create review function
-//document.addEventListener('click',createReview);
