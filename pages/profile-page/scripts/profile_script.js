@@ -248,13 +248,29 @@ let changeName= (e) =>{
     .catch(function (error){
       console.log(error);
     })
-  }
- change_btn.addEventListener('click', changeName);
+}
+change_btn.addEventListener('click', changeName);
 
- var no_button = document.getElementById("no");
+var no_button = document.getElementById("no");
+var yes_button = document.getElementById("yes");
 
- function noPress() {
-    delete_popup.style.display = "none";
- }
+function noPress() {
+   delete_popup.style.display = "none";
+}
 
 no_button.addEventListener("click", noPress);
+yes_button.addEventListener("click", yesPress)
+
+var api_delete = 'http://localhost/eatAt-backend/eatat-backend/delete-user.php'
+var url_delete_id = api_delete + '?id=' + id;
+
+function yesPress() {
+    axios({
+        url: url_delete_id,
+    }).then(function(response){
+        //deleting user and redirecting to log in page
+        alert("account deleted");
+        localStorage.clear();
+        window.location.href = "../../index.html";
+    })
+}
