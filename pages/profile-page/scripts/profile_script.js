@@ -250,3 +250,11 @@ let changeName= (e) =>{
     })
   }
  change_btn.addEventListener('click', changeName);
+
+ var no_button = document.getElementById("no");
+
+ function noPress() {
+    delete_popup.style.display = "none";
+ }
+
+no_button.addEventListener("click", noPress);
