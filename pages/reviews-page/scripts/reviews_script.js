@@ -29,9 +29,8 @@ axios({
     }) */
 })
 
+//function that creates a review card ,checks if its pending, and places it accordingly
 function createReview(is_pending,first_name,last_name,rating,review,resto_name,image){  
-    console.log("workingggg");
-   
     //check if review is pending to decide where to create review card
     if(is_pending){
         var pending_or_confirmed = document.getElementById("pending-section");
