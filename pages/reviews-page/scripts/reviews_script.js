@@ -91,6 +91,18 @@ function createReview(is_pending,first_name,last_name,rating,review,resto_name,i
     const review_paragraph = document.createElement("p");
     review_div.appendChild(review_paragraph);
     review_paragraph.innerHTML = review;
+
+    //create accept and reject button if its a pending review card
+    const accept_btn = document.createElement("div");
+    accept_btn.className = "yes";
+    accept_btn.innerHTML = "&#9989";
+    flex_div.appendChild(accept_btn);
+
+    const reject_btn = document.createElement("div");
+    reject_btn.className = "no";
+    reject_btn.innerHTML = "&#10060";
+    flex_div.appendChild(reject_btn);
+
 }
 
 //testing create review function
