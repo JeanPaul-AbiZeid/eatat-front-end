@@ -1,5 +1,6 @@
 const nav_home = document.getElementById("home");
 const rest_container = document.getElementById("rest-container");
+const logout_btn = document.getElementById("logout");
 
 //when user clicks the home in header
 nav_home.addEventListener("click", function(){
@@ -9,6 +10,11 @@ nav_home.addEventListener("click", function(){
 //when user clicks the restaurant card
 rest_container.addEventListener("click",function(){
     window.location.href = "../restaurant-page/restaurant.html";
+})
+
+//when user clicks the logout button
+logout_btn.addEventListener("click",function(){
+    window.location.href = "../../index.html";
 })
 
 id = localStorage.getItem("id");
