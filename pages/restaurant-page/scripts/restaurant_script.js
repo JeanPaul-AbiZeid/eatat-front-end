@@ -86,4 +86,53 @@ function checkedRating(){
     }
 }
 
+function createReview(first_name,last_name,rating,review,image){
+    //get resto card
+    const resto_div = document.getElementById("resto");
 
+    //create flex div for review card, and append to resto card
+    const flex_div = document.createElement("div");
+    flex_div.className = "confirm";
+    resto_div.appendChild(flex_div);
+
+    //create review card and append to flex_div
+    const review_div = document.createElement("div");
+    review_div.className = "card";
+    flex_div.appendChild(review_div);
+
+    //create user info div
+    const user_info_div = document.createElement("div");
+    user_info_div.className = "user-info";
+    review_div.appendChild(user_info_div);
+
+    //create div and its image
+    const image_div = document.createElement("div");
+    user_info_div.appendChild(image_div);
+
+    const user_img = document.createElement("img");
+    user_img.src = "./assets/eatat_icon.png"; //to be changed to user image
+    image_div.appendChild(user_img);
+
+    //create user stats div
+    const stats_div = document.createElement("div");
+    stats_div.className = "user-stats";
+    user_info_div.appendChild(stats_div);
+
+    //create elements inside user stats div
+    const full_name = document.createElement("h4");
+    stats_div.appendChild(full_name);
+    full_name.innerHTML = first_name + last_name;
+
+    const rating_div = document.createElement("div");
+    rating_div.className = "rating";
+    stats_div.appendChild(rating_div);
+    rating_div.innerHTML = rating + " &#11088";
+
+    //create review p
+    const review_paragraph = document.createElement("p");
+    review_div.appendChild(review_paragraph);
+    review_paragraph.innerHTML = review;
+}
+
+//testing create review function
+document.addEventListener('click',createReview);
