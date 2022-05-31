@@ -1,5 +1,6 @@
 const nav_home = document.getElementById("home");
 const rest_container = document.getElementById("rest-container");
+const logout_btn = document.getElementById("logout");
 
 //when user clicks the home in header
 nav_home.addEventListener("click", function(){
@@ -11,6 +12,12 @@ rest_container.addEventListener("click",function(){
     window.location.href = "../restaurant-page/restaurant.html";
 })
 
+//when user clicks on logout
+logout_btn.addEventListener('click',function(){
+    window.location.href = "../../index.html";
+})
+
+//creating url with user id to send to user-info api
 id = localStorage.getItem("id");
 var api_profile = 'http://localhost:8080/eatAt-backend/eatat-backend/user-info.php'
 var url_id = api_profile + '?id=' + id;
