@@ -19,7 +19,6 @@ var url_id = api_profile + '?id=' + id;
 axios({
     url: url_id,
 }).then(function(response){
-    console.log(response.data);
     // //looping over the array to get user data
     
     let first_name = response.data["first_name"];
@@ -93,4 +92,22 @@ function createRecent(review, ratings, name){
     description.innerHTML = review;
     review_div.appendChild(description);
 }
+
+var api_favorites = 'http://localhost/eatAt-backend/eatat-backend/get-favorites.php'
+var url_fav_id = api_favorites + '?user_id=' + id;
+
+axios({
+    url: url_fav_id,
+}).then(function(response){
+    // //looping over the array to get user data
+    for(let i = 0; i < response.data.length; i++){
+        let id = response.data[i]["id"];
+        let name = response.data[i]["name"];
+        let location = response.data[i]["location"];
+        let avg_cost = response.data[i]["avg_cost"];
+        let category = response.data[i]["category"];
+        let image = response.data[i]["image"];
+        let description = response.data[i]["description"];
+
+}})
 
