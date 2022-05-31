@@ -53,8 +53,9 @@ function createRow(id, first_name, last_name, email){
     //creating div tag and inserting in ul
     const ul_div = document.createElement("div");
     const ul = document.getElementById("list");
-    ul_div.id = id;
-    ul_div.className = "row";
+    const div_class = ul_div.classList; 
+    div_class.add(id);
+    div_class.add("row");
     ul.appendChild(ul_div);
 
     //creating li in the div
@@ -63,7 +64,24 @@ function createRow(id, first_name, last_name, email){
     li.innerHTML = "id:" + id + "\tfull name:" + first_name + ' ' + last_name + "\temail:" + email;
 
     var div_child = document.createElement("div");
-    div_child.className = "delete";
+    const div_child_class = div_child.classList; 
+    div_child_class.add(id);
+    div_child_class.add("delete");
     ul_div.appendChild(div_child);
     div_child.innerHTML = "&#10060";
 }
+
+// //dom of delete button
+// delete_button[1].addEventListener("click", function(){
+
+//     //linking delete button
+//     axios({
+//         url: 'http://localhost/eatAt-backend/eatat-backend/delete-user.php',
+//     }).then(function(response){
+//         if(response.data["success"]){
+//             var div = document.getElementsByClassName(id);
+//             div[0].remove();
+//         }
+//         }
+//     )
+// })
