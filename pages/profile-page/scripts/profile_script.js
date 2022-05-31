@@ -99,6 +99,7 @@ var url_fav_id = api_favorites + '?user_id=' + id;
 axios({
     url: url_fav_id,
 }).then(function(response){
+    console.log(response.data)
     // //looping over the array to get user data
     for(let i = 0; i < response.data.length; i++){
         let id = response.data[i]["id"];
@@ -107,7 +108,57 @@ axios({
         let avg_cost = response.data[i]["avg_cost"];
         let category = response.data[i]["category"];
         let image = response.data[i]["image"];
-        let description = response.data[i]["description"];
-
+        let descript = response.data[i]["description"];
+        createFavorite(id, name, location, avg_cost, category, image, descript);
 }})
 
+
+function createFavorite(id, name, location, avg_cost, category, image, descript) {
+    const favorite_container_parent = document.getElementsByClassName("fav-restaurant");
+    
+    //child of favorite_container_parent
+    const main_div = document.createElement("div");
+    main_div.id = id;
+    const main_class = main_div.classList;
+    main_class.add("rest-container");
+    main_class.add("blue-border");
+    favorite_container_parent[0].appendChild(main_div);
+
+    //children of main div
+    const image_div = document.createElement("div");
+    main_div.appendChild(image_div);
+
+    const resto_pic = document.createElement("img")
+    resto_pic.src = "./assets/rest-placeholder.png";
+    image_div.appendChild(resto_pic);
+
+    //child of main div
+    const rest_info = document.createElement("div");
+    rest_info.className = "rest-info";
+    main_div.appendChild(rest_info);
+
+    //restaurant name
+    const rest_name = document.createElement("h2");
+    rest_name.innerHTML = name;
+    rest_info.appendChild(rest_name);
+
+    //location
+    const rest_location = document.createElement("h3");
+    rest_location.innerHTML = "&#128205" + location;
+    rest_info.appendChild(rest_location);
+
+    // category
+    const rest_category = document.createElement("h3");
+    rest_category.innerHTML = category;
+    rest_info.appendChild(rest_category)
+
+    // average cost
+    const rest_avg_price = document.createElement("h3");
+    rest_avg_price.innerHTML = avg_cost;
+    rest_info.appendChild(rest_avg_price);
+    
+    //descripton
+    const desc = document.createElement("p")
+    desc.innerHTML = descript;
+    main_div.appendChild(desc);
+}

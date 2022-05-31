@@ -162,6 +162,7 @@ margin-bottom: 3%
 /*Footer*/
   .footer {
     display: flex;
+    margin-top: 5%;
     left: 0;
     bottom: 0;
     width: 100%;
