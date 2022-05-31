@@ -209,9 +209,13 @@ const change_btn = document.getElementById("change");
 let changeName= (e) =>{
     e.preventDefault();
     let data = new FormData();
-  
-    data.append('first_name', document.getElementById("first-name").value);
-    data.append('last_name', document.getElementById("last-name").value);
+    
+    let first = document.getElementById("first-name").value;
+    let last = document.getElementById("last-name").value;
+    let full_name = document.getElementById("full-name")
+    
+    data.append('first_name', first);
+    data.append('last_name', last);
     data.append('id', id)
   
     //linking with add-restaurant api
@@ -224,6 +228,7 @@ let changeName= (e) =>{
         alert("Name changed");
         document.getElementById("first-name").value = "";
         document.getElementById("last-name").value = "";
+        full_name.innerHTML = first + " " + last;
         }
     )
     .catch(function (error){
