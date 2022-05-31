@@ -14,7 +14,7 @@ let signUpSubmit= (e) =>{
   //linking with sign up api
   axios({
     method: 'post',
-    url: 'http://localhost:8080/eatAt-backend/eatat-backend/sign-up.php',
+    url: 'http://localhost/eatAt-backend/eatat-backend/sign-up.php',
     data: data,
   })
   .then(function (response) {
@@ -44,7 +44,7 @@ let logIn = (e)=>{
   //linking with login api
   axios({
     method: 'post',
-    url: 'http://localhost:8080/eatAt-backend/eatat-backend/login.php',
+    url: 'http://localhost/eatAt-backend/eatat-backend/login.php',
     data: data,
   })
   .then(function (response) {

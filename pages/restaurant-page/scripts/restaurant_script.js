@@ -1,16 +1,16 @@
 const nav_home = document.getElementById("home");
 
 //creating url with resto id to send to restaurant php
-let url = "http://localhost:8080/eatAt-backend/eatat-backend/restaurant.php";
+let url = "http://localhost/eatAt-backend/eatat-backend/restaurant.php";
 let resto_id = localStorage.getItem("clicked_resto_id");
 url += "?id=" + resto_id;
 
 //creating url with resto id to send to restaurant-review api
-let review_url = "http://localhost:8080/eatAt-backend/eatat-backend/restaurant-review.php";
+let review_url = "http://localhost/eatAt-backend/eatat-backend/restaurant-review.php";
 review_url += "?restaurant_id=" + resto_id;
 
 //creating url with resto id to send to restaurant-review api
-let avg_rating_url = "http://localhost:8080/eatAt-backend/eatat-backend/avg-ratings.php";
+let avg_rating_url = "http://localhost/eatAt-backend/eatat-backend/avg-ratings.php";
 avg_rating_url += "?restaurant_id=" + resto_id;
 
 //linking resto page to restaurant api
@@ -62,7 +62,7 @@ let addReview = (e)=>{
     //linking with add-review api
     axios({
       method: 'post',
-      url: 'http://localhost:8080/eatAt-backend/eatat-backend/add-review.php',
+      url: 'http://localhost/eatAt-backend/eatat-backend/add-review.php',
       data: data,
     })
     .then(function (response) {
@@ -103,7 +103,7 @@ let addFavorites = (e)=>{
     //linking with add-review api
     axios({
       method: 'post',
-      url: 'http://localhost:8080/eatAt-backend/eatat-backend/add-favorites.php',
+      url: 'http://localhost/eatAt-backend/eatat-backend/add-favorites.php',
       data: data,
     })
     .then(function (response) {

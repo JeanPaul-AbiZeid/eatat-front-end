@@ -115,18 +115,3 @@ let addRestaurant= (e) =>{
     })
   }
   add_restaurant_btn.addEventListener('click', addRestaurant);
-
-// //dom of delete button
-// delete_button[1].addEventListener("click", function(){
-
-//     //linking delete button
-//     axios({
-//         url: 'http://localhost/eatAt-backend/eatat-backend/delete-user.php',
-//     }).then(function(response){
-//         if(response.data["success"]){
-//             var div = document.getElementsByClassName(id);
-//             div[0].remove();
-//         }
-//         }
-//     )
-// })

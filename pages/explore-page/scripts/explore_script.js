@@ -1,6 +1,6 @@
 //linking restaurants data and creating resto cards accordingly
 axios({
-    url: 'http://localhost:8080/eatAt-backend/eatat-backend/explore.php',
+    url: 'http://localhost/eatAt-backend/eatat-backend/explore.php',
 }).then(function(response){
     console.log(response.data); 
     //looping over the array to get restaurant data
