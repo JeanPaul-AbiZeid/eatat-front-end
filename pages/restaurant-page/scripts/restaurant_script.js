@@ -72,10 +72,38 @@ let addReview = (e)=>{
     })
   }
 
+//linking add favorites php when user clicks on add to favorites
+let addFavorites = (e)=>{
+    e.preventDefault();
+    let data = new FormData();
+  
+    data.append('user_id', localStorage.getItem("id"));
+    data.append('restaurant_id', localStorage.getItem("clicked_resto_id"));
+
+    //linking with add-review api
+    axios({
+      method: 'post',
+      url: 'http://localhost:8080/eatAt-backend/eatat-backend/add-favorites.php',
+      data: data,
+    })
+    .then(function (response) {
+      console.log(response.data);
+      if(response.data["success"]){
+        alert('Added to favorites succesfully!');
+      }
+    })
+    .catch(function (error){
+      console.log(error);
+    })
+  }
+
 //when user clicks on submit review
 add_review_btn = document.getElementById("add-review-button");
-
 add_review_btn.addEventListener('click',addReview);
+
+//when user clicks on add to favorites
+add_favorites_btn = document.getElementById("add");
+add_favorites_btn.addEventListener('click',addFavorites);
 
 //when user clicks the home in header
 nav_home.addEventListener("click", function(){
