@@ -12,7 +12,7 @@ rest_container.addEventListener("click",function(){
 })
 
 id = localStorage.getItem("id");
-var api_profile = 'http://localhost/eatAt-backend/eatat-backend/user-info.php'
+var api_profile = 'http://localhost:8080/eatAt-backend/eatat-backend/user-info.php'
 var url_id = api_profile + '?id=' + id;
 
 //linking user data and creating user profile accordingly
@@ -34,7 +34,7 @@ function changeProfile(first_name, last_name){ //add parameter picture
     full_name.innerHTML = first_name + " " + last_name;
 }
 
-var api_review = 'http://localhost/eatAt-backend/eatat-backend/get-recent-review.php'
+var api_review = 'http://localhost:8080/eatAt-backend/eatat-backend/get-recent-review.php'
 var url_recent_id = api_review + '?id=' + id;
 
 axios({
@@ -93,7 +93,7 @@ function createRecent(review, ratings, name){
     review_div.appendChild(description);
 }
 
-var api_favorites = 'http://localhost/eatAt-backend/eatat-backend/get-favorites.php'
+var api_favorites = 'http://localhost:8080/eatAt-backend/eatat-backend/get-favorites.php'
 var url_fav_id = api_favorites + '?user_id=' + id;
 
 axios({

@@ -108,9 +108,7 @@ let addFavorites = (e)=>{
     })
     .then(function (response) {
       console.log(response.data);
-      if(response.data["success"]){
-        alert('Added to favorites succesfully!');
-      }
+      alert(response.data["response"]);
     })
     .catch(function (error){
       console.log(error);

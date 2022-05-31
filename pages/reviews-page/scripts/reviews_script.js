@@ -100,7 +100,7 @@ function createReview(is_pending,first_name,last_name,rating,review,resto_name,i
     flex_div.appendChild(accept_btn);
     }
 
-    //create reject
+    //create reject button
     const reject_btn = document.createElement("div");
     reject_btn.className = "no";
     reject_btn.innerHTML = "&#10060";
