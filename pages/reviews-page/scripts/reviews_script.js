@@ -1,6 +1,6 @@
 //linking reviews data and creating pending reviews and confirmed reviews
 axios({
-    url: 'http://localhost:8080/eatAt-backend/eatat-backend/reviews.php',
+    url: 'http://localhost/eatAt-backend/eatat-backend/reviews.php',
 }).then(function(response){
     console.log(response.data); 
     //looping over the array to get restaurant data
