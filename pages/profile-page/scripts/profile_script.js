@@ -173,3 +173,27 @@ function createFavorite(id, name, location, avg_cost, category, image, descript)
     desc.innerHTML = descript;
     main_div.appendChild(desc);
 }
+
+// Get the popup
+var popup = document.getElementById("edit-profile");
+
+// Get the button that opens the popup
+var edit = document.getElementById("edit");
+
+// Get the <span> element that closes the popup
+var span = document.getElementsByClassName("close");
+
+// When the user clicks the button, open the popup 
+edit.addEventListener("click", function(){
+    popup.style.display = "block";})
+
+// When the user clicks on <span> (x), close the popup
+span[0].addEventListener("click", function(){
+    popup.style.display = "none";})
+
+// When the user clicks anywhere outside of the popup, close it
+window.onclick = function(event) {
+if (event.target == popup) {
+    popup.style.display = "none";
+}
+}
