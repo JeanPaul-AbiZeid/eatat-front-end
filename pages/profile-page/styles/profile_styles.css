@@ -187,6 +187,7 @@ margin-bottom: 3%
 
 .prof-revs{
   display: flex;
+  margin-left: 5%;
   gap: 20%;
 }
 
@@ -223,35 +224,39 @@ margin-bottom: 3%
   margin-left: 3%;
 }
 
-  /*Restaurant container*/
-  .rest-container{
-    margin-left: 3%;
-    margin-top: 3%;
-    margin-right: 3%;
-    display: flex;
-    width: auto;
-    color: #2ebeff;
-  }
+.fav-restaurant h2 {
+  margin-left: 4%;
+}
 
-  .rest-container:hover{
-    cursor: pointer;
-    background-color: #2ebeff;
-    color:white;
-  }
+/*Restaurant container*/
+.rest-container{
+  margin-left: 3%;
+  margin-top: 3%;
+  margin-right: 3%;
+  display: flex;
+  width: auto;
+  color: #2ebeff;
+}
 
-  .rest-info{
-    margin-left: 1%;
-  }
+.rest-container:hover{
+  cursor: pointer;
+  background-color: #2ebeff;
+  color:white;
+}
 
-  .rest-container h2{
-    font-family: lobster;
-    font-size: 2em;
-  }
+.rest-info{
+  margin-left: 1%;
+}
 
-  .rest-container > p{
-    font-size: x-large;
-    margin-left: 10%;
-  }
+.rest-container h2{
+  font-family: lobster;
+  font-size: 2em;
+}
+
+.rest-container > p{
+  font-size: x-large;
+  margin-left: 10%;
+}
 
 /*Footer*/
   .footer {
