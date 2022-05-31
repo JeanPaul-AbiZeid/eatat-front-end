@@ -6,8 +6,8 @@ let signUpSubmit= (e) =>{
   e.preventDefault();
   let data = new FormData();
 
-  data.append('first-name', document.getElementById("first-name").value);
-  data.append('last-name', document.getElementById("last-name").value);
+  data.append('first_name', document.getElementById("first-name").value);
+  data.append('last_name', document.getElementById("last-name").value);
   data.append('email', document.getElementById("email").value);
   data.append('password', document.getElementById("password").value);
 
