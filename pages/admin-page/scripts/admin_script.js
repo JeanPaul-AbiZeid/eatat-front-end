@@ -34,7 +34,7 @@ logout_btn.addEventListener("click",function(){
 window.location.href = "../../index.html";
 })
 
-//linking restaurants data and creating resto cards accordingly
+//linking users_list api to display user data
 axios({
     url: 'http://localhost/eatAt-backend/eatat-backend/users_list.php',
 }).then(function(response){
@@ -46,8 +46,38 @@ axios({
         let email = response.data[i]["email"];
         createRow(id, first_name, last_name, email);
     }
+
+    //****this section only worked in axios idk why****
+
+    //store all delete buttons
+    const all_delete_btns = document.querySelectorAll(".delete");
+
+    //add event listeners and axios to every delete button
+    all_delete_btns.forEach(function(item){
+      item.addEventListener('click',function(){
+        console.log("worksss");
+        item.parentElement.remove();
+
+        //creating url with user id to send to restaurant php
+        let url = "http://localhost/eatAt-backend/eatat-backend/delete-user.php";
+        let user_id = item.classList[0];
+        url += "?user_id=" + user_id;
+
+
+        //linking delete button to delete-user api
+        axios({
+          url: url,
+        }).then(function(response){
+          //console.log(response.data); 
+          alert("user deleted succesfully");
+        }).catch(function (error){
+          console.log(error);
+        })
+      })
+    })
 })
 
+//function to create a row
 function createRow(id, first_name, last_name, email){
     //creating div tag and inserting in ul
     const ul_div = document.createElement("div");
@@ -70,7 +100,8 @@ function createRow(id, first_name, last_name, email){
     div_child.innerHTML = "&#10060";
 }
 
-const add_restaurant_btn = document.getElementById("add");
+
+
 
 //function when adding restaurant 
 let addRestaurant= (e) =>{
@@ -114,4 +145,6 @@ let addRestaurant= (e) =>{
       console.log(error);
     })
   }
+
+  const add_restaurant_btn = document.getElementById("add");
   add_restaurant_btn.addEventListener('click', addRestaurant);

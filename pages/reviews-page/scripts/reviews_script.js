@@ -3,7 +3,7 @@ axios({
     url: 'http://localhost/eatAt-backend/eatat-backend/reviews.php',
 }).then(function(response){
     console.log(response.data); 
-    //looping over the array to get restaurant data
+    //looping over the array to get review data
     for(let i=0; i<response.data.length; i++){
         let first_name = response.data[i]["first_name"];
         let last_name = response.data[i]["last_name"];
@@ -11,22 +11,10 @@ axios({
         let rating = response.data[i]["ratings"];
         let resto_name = response.data[i]["name"];
         let is_pending = response.data[i]["is_pending"];
+        //creating review card 
         createReview(is_pending,first_name,last_name,rating,review,resto_name);
-
-
     }
     
-  /*   //when user clicks the restaurant card (declared inside the axios because it only worked here)
-    const rest_container = document.querySelectorAll(".rest-container");
-
-    rest_container.forEach(function(item){
-        //console.log("working");
-        item.addEventListener("click",function(){
-            //saved the clicked resto card id to local storage
-            localStorage.setItem("clicked_resto_id", item.id);
-            window.location.href = "../restaurant-page/restaurant.html";
-        })
-    }) */
 })
 
 //function that creates a review card ,checks if its pending, and places it accordingly
@@ -107,6 +95,33 @@ function createReview(is_pending,first_name,last_name,rating,review,resto_name,i
     flex_div.appendChild(reject_btn);
 
 }
+
+//store all delete buttons
+const all_delete_btns = document.querySelectorAll(".no");
+
+//add event listeners and axios to every delete button
+all_delete_btns.forEach(function(item){
+  item.addEventListener('click',function(){
+    console.log("worksss");
+    item.parentElement.remove();
+
+    //creating url with user id to send to restaurant php
+    let url = "http://localhost/eatAt-backend/eatat-backend/delete-user.php";
+    let user_id = item.classList[0];
+    url += "?user_id=" + user_id;
+
+
+    //linking delete button to delete-user api
+    axios({
+      url: url,
+    }).then(function(response){
+      //console.log(response.data); 
+      alert("user deleted succesfully");
+    }).catch(function (error){
+      console.log(error);
+    })
+  })
+})
 
 //testing create review function
 //document.addEventListener('click',createReview(1));
