@@ -68,6 +68,7 @@ function createReview(is_pending,first_name,last_name,rating,review,resto_name,i
     //create elements inside user stats div
     const full_name = document.createElement("h4");
     stats_div.appendChild(full_name);
+    full_name.className = "rest-name"
     full_name.innerHTML = first_name + " " + last_name;
 
     const rating_div = document.createElement("div");
@@ -123,9 +124,7 @@ all_delete_btns.forEach(function(item){
   })
 })
 
-//testing create review function
-//document.addEventListener('click',createReview(1));
-
+//confirm button functionality
 document.getElementById("yes").addEventListener('click',function(){
     document.getElementById("yes").parentElement.style.display = "none";
 
