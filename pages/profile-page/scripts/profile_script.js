@@ -12,7 +12,7 @@ rest_container.addEventListener("click",function(){
 })
 
 id = localStorage.getItem("id");
-var api_profile = 'http://localhost:8080/eatAt-backend/eatat-backend/user-info.php'
+var api_profile = 'http://localhost/eatAt-backend/eatat-backend/user-info.php'
 var url_id = api_profile + '?id=' + id;
 
 //linking user data and creating user profile accordingly
@@ -34,7 +34,7 @@ function changeProfile(first_name, last_name){ //add parameter picture
     full_name.innerHTML = first_name + " " + last_name;
 }
 
-var api_review = 'http://localhost:8080/eatAt-backend/eatat-backend/get-recent-review.php'
+var api_review = 'http://localhost/eatAt-backend/eatat-backend/get-recent-review.php'
 var url_recent_id = api_review + '?id=' + id;
 
 axios({
@@ -93,13 +93,12 @@ function createRecent(review, ratings, name){
     review_div.appendChild(description);
 }
 
-var api_favorites = 'http://localhost:8080/eatAt-backend/eatat-backend/get-favorites.php'
+var api_favorites = 'http://localhost/eatAt-backend/eatat-backend/get-favorites.php'
 var url_fav_id = api_favorites + '?user_id=' + id;
 
 axios({
     url: url_fav_id,
 }).then(function(response){
-    console.log(response.data)
     // //looping over the array to get user data
     for(let i = 0; i < response.data.length; i++){
         let id = response.data[i]["id"];
@@ -197,3 +196,32 @@ if (event.target == popup) {
     popup.style.display = "none";
 }
 }
+
+const change_btn = document.getElementById("change");
+
+//function when adding restaurant 
+let changeName= (e) =>{
+    e.preventDefault();
+    let data = new FormData();
+  
+    data.append('first_name', document.getElementById("first-name").value);
+    data.append('last_name', document.getElementById("last-name").value);
+    data.append('id', id)
+  
+    //linking with add-restaurant api
+    axios({
+      method: 'post',
+      url: 'http://localhost/eatAt-backend/eatat-backend/change-info.php',
+      data: data,
+    })
+    .then(function (response) {
+        alert("Name changed");
+        document.getElementById("first-name").value = "";
+        document.getElementById("last-name").value = "";
+        }
+    )
+    .catch(function (error){
+      console.log(error);
+    })
+  }
+ change_btn.addEventListener('click', changeName);

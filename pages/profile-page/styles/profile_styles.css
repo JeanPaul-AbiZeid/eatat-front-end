@@ -91,6 +91,7 @@
 /* change button */
 #change {
   background-color: #2ebeff;
+  cursor: pointer;
   margin-top: 1%;
   font-size: 20px;
   border-radius: 5px;
