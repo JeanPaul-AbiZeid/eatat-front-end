@@ -88,6 +88,20 @@
   margin-bottom: 2%;
 }
 
+.btn {
+  background-color: #2ebeff;
+  cursor: pointer;
+  border-color: #08b1ff;
+  width: 50px;
+  font-size: 20px;
+  margin-top: 2%;
+  border-radius: 5px;
+}
+
+#btn:hover{
+  background-color: #08b1ff;
+}
+
 /* change button */
 #change {
   background-color: #2ebeff;

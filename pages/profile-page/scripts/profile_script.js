@@ -179,7 +179,7 @@ function createFavorite(id, name, location, avg_cost, category, image, descript)
     main_div.appendChild(desc);
 }
 
-// Get the popup
+// Get the popup to edit profile
 var popup = document.getElementById("edit-profile");
 
 // Get the button that opens the popup
@@ -196,9 +196,23 @@ edit.addEventListener("click", function(){
 span[0].addEventListener("click", function(){
     popup.style.display = "none";})
 
+
+
+// Get the popup to delete account
+var delete_popup = document.getElementById("deleting");
+
+// Get the button that opens the popup
+var delete_btn = document.getElementById("delete");
+
+// When the user clicks the button, open the popup 
+delete_btn.addEventListener("click", function(){
+    delete_popup.style.display = "block";})
+
 // When the user clicks anywhere outside of the popup, close it
 window.onclick = function(event) {
-if (event.target == popup) {
+if (event.target == delete_popup) {
+    delete_popup.style.display = "none";
+}else if (event.target == popup) {
     popup.style.display = "none";
 }
 }
