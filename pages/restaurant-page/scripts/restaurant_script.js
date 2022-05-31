@@ -156,7 +156,6 @@ function checkedRating(){
 
 function createReview(first_name,last_name,rating,review,image){
 
-    console.log("works");
     //get resto card
     const resto_div = document.getElementById("resto");
 

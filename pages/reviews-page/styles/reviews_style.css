@@ -28,13 +28,7 @@
     text-align: center;
   }
 
-  .pending {
-    margin-top: 2%;
-    margin-left: 15%;
-    margin-right: 15%;
-  }
-
-  .pending-review {
+  .review-card {
     margin-top: 2%;
     width: 100%;
   }
@@ -54,10 +48,6 @@
   .no {
     font-size: 30px;
     cursor: pointer;
-  }
-  .confirmed-review {
-    margin-top: 2%;
-    width: 100%;
   }
 
   .reviews {
