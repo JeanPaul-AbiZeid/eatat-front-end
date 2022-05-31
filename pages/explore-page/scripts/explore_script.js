@@ -19,7 +19,6 @@ axios({
     const rest_container = document.querySelectorAll(".rest-container");
 
     rest_container.forEach(function(item){
-        //console.log("working");
         item.addEventListener("click",function(){
             //saved the clicked resto card id to local storage
             localStorage.setItem("clicked_resto_id", item.id);

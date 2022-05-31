@@ -108,7 +108,7 @@ let addFavorites = (e)=>{
     })
     .then(function (response) {
       console.log(response.data);
-      alert(response.data["response"]);
+      alert(response.data["response"]); //returns an alert if added or already a favorite
     })
     .catch(function (error){
       console.log(error);

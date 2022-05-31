@@ -110,6 +110,17 @@ axios({
         let image = response.data[i]["image"];
         let descript = response.data[i]["description"];
         createFavorite(id, name, location, avg_cost, category, image, descript);
+
+        //when user clicks one of the favorite restaurant cards   (declared inside the axios because it only worked here)
+        const rest_container = document.querySelectorAll(".rest-container");
+
+        rest_container.forEach(function(item){
+            item.addEventListener("click",function(){
+                //saved the clicked resto card id to local storage
+                localStorage.setItem("clicked_resto_id", item.id);
+                window.location.href = "../restaurant-page/restaurant.html";
+        })
+    })
 }})
 
 
