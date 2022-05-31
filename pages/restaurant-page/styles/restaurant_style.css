@@ -101,10 +101,22 @@
     background-color: #0081bd;
   }
 
+  .name{
+    font-family: lobster;
+    color: #2ebeff;
+    font-size: 25px;
+  }
+
   .card {
     border: 1px solid gray;
     padding-left: 2%;
     padding-right: 5%;
+  }
+
+  #info > h2 {
+    font-family: lobster;
+    color: #2ebeff;
+    font-size: 50px;
   }
 
   .user-info {

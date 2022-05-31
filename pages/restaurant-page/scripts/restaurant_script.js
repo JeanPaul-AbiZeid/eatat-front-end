@@ -185,6 +185,7 @@ function createReview(first_name,last_name,rating,review,image){
 
     //create elements inside user stats div
     const full_name = document.createElement("h4");
+    full_name.className = "name";
     stats_div.appendChild(full_name);
     full_name.innerHTML = first_name + last_name;
 
