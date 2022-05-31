@@ -38,7 +38,6 @@ window.location.href = "../../index.html";
 axios({
     url: 'http://localhost/eatAt-backend/eatat-backend/users_list.php',
 }).then(function(response){
-    console.log(response.data);
     //looping over the array to get user data
     for(let i = 0; i < response.data.length; i++){
         let id = response.data[i]["id"];
@@ -70,6 +69,52 @@ function createRow(id, first_name, last_name, email){
     ul_div.appendChild(div_child);
     div_child.innerHTML = "&#10060";
 }
+
+const add_restaurant_btn = document.getElementById("add");
+
+//function when adding restaurant 
+let addRestaurant= (e) =>{
+    e.preventDefault();
+    let data = new FormData();
+  
+    data.append('name', document.getElementById("rest_name").value);
+    data.append('location', document.getElementById("location").value);
+    data.append('avg_cost', document.getElementById("avg_cost").value);
+    data.append('category', document.getElementById("category").value);
+    // data.append('image', document.getElementById("image").value);
+    data.append('description', document.getElementById("rest_description").value);
+  
+    //linking with add-restaurant api
+    axios({
+      method: 'post',
+      url: 'http://localhost/eatAt-backend/eatat-backend/add-restaurant.php',
+      data: data,
+    })
+    .then(function (response) {
+      //check if the restaurant exists
+      if(response.data["success"]){
+        alert("restaurant added");
+        document.getElementById("rest_name").value = "";
+        document.getElementById("location").value = "";
+        document.getElementById("avg_cost").value = "";
+        document.getElementById("category").value = "";
+        // data.append('image', document.getElementById("image").value);
+        document.getElementById("rest_description").value = "";
+      }else{
+        alert(response.data["response"]); //restaurant already exists
+        document.getElementById("rest_name").value = "";
+        document.getElementById("location").value = "";
+        document.getElementById("avg_cost").value = "";
+        document.getElementById("category").value = "";
+        // data.append('image', document.getElementById("image").value);
+        document.getElementById("rest_description").value = "";
+      }
+    })
+    .catch(function (error){
+      console.log(error);
+    })
+  }
+  add_restaurant_btn.addEventListener('click', addRestaurant);
 
 // //dom of delete button
 // delete_button[1].addEventListener("click", function(){
