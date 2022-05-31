@@ -2,7 +2,7 @@
 axios({
     url: 'http://localhost:8080/eatAt-backend/eatat-backend/explore.php',
 }).then(function(response){
-    //console.log(response.data); 
+    console.log(response.data); 
     //looping over the array to get restaurant data
     for(let i=0; i<response.data.length; i++){
         let id = response.data[i]["id"];

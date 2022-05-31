@@ -1,16 +1,20 @@
 const nav_home = document.getElementById("home");
 
-//sending resto id to php with url
+//creating url with resto id to send to restaurant php
 let url = "http://localhost:8080/eatAt-backend/eatat-backend/restaurant.php";
 let resto_id = localStorage.getItem("clicked_resto_id");
 url += "?id=" + resto_id;
 
-//linking resto page to api
+//creating url with resto id to send to restaurant-review api
+let review_url = "http://localhost:8080/eatAt-backend/eatat-backend/restaurant-review.php";
+review_url += "?restaurant_id=" + resto_id;
+
+//linking resto page to restaurant api
 axios({
     url: url,
 }).then(function(response){
     result = response.data;
-    console.log(response.data); 
+    //console.log(response.data); 
     //use resto data to fill up page
     let name = result.name;
     let location = result.location;
@@ -20,8 +24,26 @@ axios({
     fillPage(name,location,avg_cost,category,description); 
 }).catch(function (error){
     console.log(error);
-  })
+})
 
+//linking resto page to restaurant-review
+axios({
+    url: review_url,
+}).then(function(response){
+        //console.log(response.data); 
+        //looping over the array to get review data
+        for(let i=0; i<response.data.length; i++){
+            let first = response.data[i]["first_name"];
+            let last = response.data[i]["last_name"];
+            let rating = response.data[i]["ratings"];
+            let review = response.data[i]["review"];
+
+            //creating review card of each review
+            createReview(first,last,rating,review);
+        }
+}).catch(function (error){
+    console.log(error);
+    })
 
 //linking add review php when user submits a review
 let addReview = (e)=>{
@@ -49,8 +71,6 @@ let addReview = (e)=>{
       console.log(error);
     })
   }
-
-console.log(localStorage.getItem("id"));
 
 //when user clicks on submit review
 add_review_btn = document.getElementById("add-review-button");
@@ -87,6 +107,8 @@ function checkedRating(){
 }
 
 function createReview(first_name,last_name,rating,review,image){
+
+    console.log("works");
     //get resto card
     const resto_div = document.getElementById("resto");
 
@@ -135,4 +157,4 @@ function createReview(first_name,last_name,rating,review,image){
 }
 
 //testing create review function
-document.addEventListener('click',createReview);
+//document.addEventListener('click',createReview);
