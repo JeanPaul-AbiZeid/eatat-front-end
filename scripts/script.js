@@ -18,6 +18,7 @@ let signUpSubmit= (e) =>{
     data: data,
   })
   .then(function (response) {
+    console.log(response.data);
     //check if the email exists
     if(response.data["success"]){
       window.location.href = "./pages/explore-page/explore.html";

@@ -31,16 +31,16 @@ function createReview(is_pending,first_name,last_name,rating,review,resto_name,i
     big_review_card.className = "review-card";
     pending_or_confirmed.appendChild(big_review_card);
 
-    //create header of resto name
-    const resto_name_header = document.createElement("h3");
-    resto_name_header.className = "rest-name";
-    resto_name_header.innerHTML = resto_name;
-    big_review_card.appendChild(resto_name_header)
-
     //create flex div for review card, and append to resto card
     const flex_div = document.createElement("div");
     flex_div.className = "confirm";
     big_review_card.appendChild(flex_div);
+
+    //create header of resto name h3
+    const resto_name_header = document.createElement("h3");
+    resto_name_header.className = "rest-name";
+    resto_name_header.innerHTML = resto_name + ":";
+    flex_div.appendChild(resto_name_header)
     
     //create review card and append to flex_div
     const review_div = document.createElement("div");
@@ -125,3 +125,8 @@ all_delete_btns.forEach(function(item){
 
 //testing create review function
 //document.addEventListener('click',createReview(1));
+
+document.getElementById("yes").addEventListener('click',function(){
+    document.getElementById("yes").parentElement.style.display = "none";
+
+})
