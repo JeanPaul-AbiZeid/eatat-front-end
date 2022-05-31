@@ -34,3 +34,18 @@ function changeProfile(first_name, last_name){ //add parameter picture
     const full_name = document.getElementById("full-name");
     full_name.innerHTML = first_name + " " + last_name;
 }
+
+var api_review = 'http://localhost/eatAt-backend/eatat-backend/get-recent-review.php'
+var url_recent_id = api_review + '?id=' + id;
+
+axios({
+    url: url_recent_id,
+}).then(function(response){
+    console.log(response.data);
+    // //looping over the array to get user data
+    for(let i = 0; i < response.data.length; i++){
+        let review = response.data[i]["review"];
+        let ratings = response.data[i]["ratings"];
+        let name = response.data[i]["name"];
+        
+}})
