@@ -34,7 +34,7 @@ logout_btn.addEventListener("click",function(){
 window.location.href = "../../index.html";
 })
 
-//linking restaurants data and creating resto cards accordingly
+//linking users_list api to display user data
 axios({
     url: 'http://localhost/eatAt-backend/eatat-backend/users_list.php',
 }).then(function(response){
@@ -46,8 +46,19 @@ axios({
         let email = response.data[i]["email"];
         createRow(id, first_name, last_name, email);
     }
+
+    //only worked in axios idk why
+    const all_delete_btns = document.querySelectorAll(".delete");
+
+    all_delete_btns.forEach(function(item){
+      item.addEventListener('click',function(){
+        console.log("worksss");
+        item.parentElement.remove();
+      })
+    })
 })
 
+//function to create a row
 function createRow(id, first_name, last_name, email){
     //creating div tag and inserting in ul
     const ul_div = document.createElement("div");
@@ -116,17 +127,4 @@ let addRestaurant= (e) =>{
   }
   add_restaurant_btn.addEventListener('click', addRestaurant);
 
-// //dom of delete button
-// delete_button[1].addEventListener("click", function(){
 
-//     //linking delete button
-//     axios({
-//         url: 'http://localhost/eatAt-backend/eatat-backend/delete-user.php',
-//     }).then(function(response){
-//         if(response.data["success"]){
-//             var div = document.getElementsByClassName(id);
-//             div[0].remove();
-//         }
-//         }
-//     )
-// })
